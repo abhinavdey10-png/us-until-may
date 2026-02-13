@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Us Until May 💜</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+
+body{
+background:linear-gradient(135deg,#240046,#3c096c,#5a189a,#7b2cbf);
+color:white;
+text-align:center;
+overflow-x:hidden;
+min-height:100vh;
+}
+
+.section{
+display:none;
+padding:40px 20px;
+min-height:100vh;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+.active{display:flex}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:30px;
+background:#c77dff;
+color:white;
+cursor:pointer;
+margin:10px;
+transition:0.3s;
+}
+
+button:hover{background:#e0aaff;transform:scale(1.05)}
+
+input{
+padding:12px;
+border-radius:25px;
+border:none;
+margin-top:15px;
+width:80%;
+max-width:300px;
+text-align:center;
+}
+
+/* Floating hearts */
+.heart{
+position:fixed;
+bottom:-20px;
+font-size:20px;
+animation:floatUp 6s linear infinite;
+}
+@keyframes floatUp{
+0%{transform:translateY(0);opacity:1}
+100%{transform:translateY(-110vh);opacity:0}
+}
+
+/* Typewriter */
+.typewriter{
+max-width:350px;
+min-height:200px;
+font-size:1rem;
+line-height:1.6;
+border-right:2px solid white;
+white-space:pre-wrap;
+overflow:hidden;
+}
+
+/* Gallery */
+.gallery-wrapper{
+width:100%;
+overflow:hidden;
+margin-top:30px;
+}
+.gallery-track{
+display:flex;
+gap:20px;
+animation:scrollGallery 45s linear infinite;
+}
+.gallery-track img{
+height:180px;
+border-radius:20px;
+transition:transform 0.6s ease, filter 0.6s ease;
+}
+.gallery-track img:hover{
+transform:scale(1.08);
+filter:brightness(1.1);
+}
+.gallery-wrapper:hover .gallery-track{
+animation-play-state:paused;
+}
+@keyframes scrollGallery{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+
+/* Gift styling */
+.gift-box{
+max-width:500px;
+text-align:left;
+background:rgba(255,255,255,0.1);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+}
+
+.layer{
+opacity:0;
+transform:translateY(20px);
+transition:all 0.8s ease;
+margin-bottom:25px;
+}
+.layer.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.countdown{font-size:1.5rem;margin-top:20px;font-weight:bold}
+#noBtn{position:relative}
+</style>
+</head>
+
+<body>
+
+<!-- Landing -->
+<div class="section active" id="landing">
+<h1 style="font-family:'Sacramento',cursive;font-size:2.8rem;">Hi Ayushmaaa 💜</h1>
+<p>Before you enter our violet universe, Cuttuuu Jiii...</p>
+<button onclick="showGame()">Continue 💜</button>
+</div>
+
+<!-- Game -->
+<div class="section" id="game">
+<h1>Will You Be My Valentine, Modhuuu? 💜</h1>
+<button onclick="yesClicked()">YES 💖</button>
+<button id="noBtn" ontouchstart="moveNo()" onmouseover="moveNo()">NO 😏</button>
+</div>
+
+<!-- Main Password -->
+<div class="section" id="passwordSection">
+<h2>Enter Our Secret Password 🔐</h2>
+<input type="password" id="passwordInput">
+<p style="opacity:0.8;">Hint: It's the same as my phone password 💜</p>
+<button onclick="checkPassword()">Unlock 💜</button>
+<p id="wrongPass"></p>
+</div>
+
+<!-- Countdown -->
+<div class="section" id="countdownSection">
+<h2>Counting Down Until We Meet 💜</h2>
+<div class="countdown" id="countdown"></div>
+<button onclick="enterDashboard()">Enter Our World ✨</button>
+</div>
+
+<!-- Dashboard -->
+<div class="section" id="dashboard">
+<h1 style="font-family:'Sacramento',cursive;font-size:2.5rem;">Our Violet World 💜</h1>
+
+<h2>My Letter To You 💌</h2>
+<div class="typewriter" id="typewriter"></div>
+
+<h2 style="margin-top:40px;">Our Memories 📸</h2>
+
+<div class="gallery-wrapper">
+<div class="gallery-track">
+
+<!-- Cloudinary Images (optimized) -->
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo7_eyieyk.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo12_gnn5ou.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo10_p6n83b.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo9_kgmjv4.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo4_v2rr9b.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo8_hxqry2.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001746/photo5_ftbxmv.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001746/photo6_tbvyvm.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001745/photo3_dvdvbv.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001744/photo2_ujcyb5.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001743/photo1_eenv0n.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001743/photo13_qekmd4.jpg">
+
+<!-- Repeat for smooth scroll -->
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo7_eyieyk.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo12_gnn5ou.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001748/photo10_p6n83b.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo9_kgmjv4.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo4_v2rr9b.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001747/photo8_hxqry2.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001746/photo5_ftbxmv.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001746/photo6_tbvyvm.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001745/photo3_dvdvbv.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001744/photo2_ujcyb5.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001743/photo1_eenv0n.jpg">
+<img src="https://res.cloudinary.com/dmnrajpve/image/upload/w_800,q_auto/v1771001743/photo13_qekmd4.jpg">
+
+</div>
+</div>
+
+<button onclick="showGiftPassword()">Open Your Special Gift 🎁</button>
+</div>
+
+<!-- AWB Password -->
+<div class="section" id="giftPasswordSection">
+<h2>Enter Courier Waybill Number 📦</h2>
+<input type="text" id="giftPasswordInput">
+<button onclick="unlockGift()">Unlock Gift 💜</button>
+<p id="giftWrong"></p>
+</div>
+
+<!-- Gift Section -->
+<div class="section" id="giftSection">
+<h1 style="font-family:'Sacramento',cursive;font-size:2.5rem;">Us Until May 💜</h1>
+
+<div class="gift-box">
+<div class="layer">
+<h3>🍫 First Layer — Chocolates</h3>
+<p>Your favourites. Sweetness should always be the first thing you feel.</p>
+</div>
+
+<div class="layer">
+<h3>💌 Second Layer — 15 Weekly Messages</h3>
+<p style="color:#ffd60a;">💛 February</p>
+<p style="color:#c77dff;">💜 March</p>
+<p style="color:#38b000;">💚 April</p>
+<p style="color:#87CEEB;">💙 May</p>
+</div>
+
+<div class="layer">
+<h3>🧪 Third Layer — 7 Vials</h3>
+<p>
+1 — When you feel lack of confidence<br>
+2 — Read it to find it<br>
+3 — When you feel dejected<br>
+4 — When you are angry<br>
+5 — When you can't fall asleep<br>
+6 — When you are badly missing me<br>
+7 — Read to find out
+</p>
+</div>
+
+<div class="layer">
+<h3>🎟 Final Layer — Tokens</h3>
+<p>One-time-use tokens. Use wisely, Cuttuuu Jiii 😌💜</p>
+</div>
+</div>
+</div>
+
+<script>
+
+/* Floating hearts */
+setInterval(()=>{
+const heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💜";
+heart.style.left=Math.random()*100+"vw";
+heart.style.animationDuration=(Math.random()*3+3)+"s";
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},600);
+
+/* Navigation */
+function showGame(){landing.classList.remove("active");game.classList.add("active");}
+function yesClicked(){game.classList.remove("active");passwordSection.classList.add("active");}
+function enterDashboard(){countdownSection.classList.remove("active");dashboard.classList.add("active");startTypewriter();}
+function showGiftPassword(){dashboard.classList.remove("active");giftPasswordSection.classList.add("active");}
+function moveNo(){noBtn.style.position="absolute";noBtn.style.top=Math.random()*70+"%";noBtn.style.left=Math.random()*70+"%";}
+
+/* Passwords */
+const correctPassword="030403";
+const giftPassword="B86172844";
+
+function checkPassword(){
+if(passwordInput.value===correctPassword){
+passwordSection.classList.remove("active");
+countdownSection.classList.add("active");
+}else{wrongPass.innerText="Wrong password 😭";}
+}
+
+function unlockGift(){
+if(giftPasswordInput.value===giftPassword){
+giftPasswordSection.classList.remove("active");
+giftSection.classList.add("active");
+animateLayers();
+}else{giftWrong.innerText="Incorrect waybill number 💔";}
+}
+
+/* Countdown */
+const meetDate=new Date("May 15, 2026").getTime();
+setInterval(()=>{
+const now=new Date().getTime();
+const d=Math.floor((meetDate-now)/(1000*60*60*24));
+countdown.innerHTML=d+" days left 💜";
+},1000);
+
+/* Typewriter message */
+const message=`Ayushmaaa,
+
+'Kisi cheez ko agar poori shiddat se chaho toh poori qaayanat ussey tumse milane ki saazish mein jut jaati hain' - Truest of words....
+
+I still don't believe that I am writing this Valentine's message for you :)
+
+You have forever been the girl of my dreams!
+The way you are, the way you think, the way you smile; everything is just perfect!
+
+I am lucky enough to have been given this second chance by GOD (Fav hoon na unka) to share this life of mine with you.
+
+Thank you so much for always showing faith in me please keep believing in me and I will keep proving how genuine your trust is.
+
+Stay blessed and happy(That toh I will keep you only)
+
+Hope this brings a smile to your GAANDU face :)
+
+Happy Valentines' Ayushmaaaaaaa 💜`;
+
+let i=0;
+function startTypewriter(){
+if(i<message.length){
+typewriter.innerHTML+=message.charAt(i);
+i++;
+setTimeout(startTypewriter,30);
+}
+}
+
+/* Animate gift layers */
+function animateLayers(){
+const layers=document.querySelectorAll(".layer");
+layers.forEach((layer,index)=>{
+setTimeout(()=>layer.classList.add("show"),index*800);
+});
+}
+
+</script>
+
+</body>
+</html>
